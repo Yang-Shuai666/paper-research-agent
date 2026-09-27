@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paper Research Agent</title>
+    <style>
+      :root { color-scheme: light; font-family: system-ui, sans-serif; }
+      body { margin: 0; background: #f4f1ea; color: #222; }
+      main { width: min(960px, calc(100% - 32px)); margin: 40px auto; }
+      h1 { margin-bottom: 8px; }
+      .layout { display: grid; grid-template-columns: 280px 1fr; gap: 20px; }
+      section { background: #fffdf8; border: 1px solid #ddd6c9; padding: 20px; border-radius: 8px; }
+      button { cursor: pointer; border: 0; border-radius: 5px; padding: 9px 13px; background: #175c58; color: white; }
+      button.secondary { background: #d9e5df; color: #173b38; }
+      input[type="file"], textarea { width: 100%; box-sizing: border-box; margin: 10px 0; }
+      textarea { min-height: 100px; padding: 10px; border: 1px solid #c9c1b3; border-radius: 5px; }
+      .paper { padding: 10px 0; border-bottom: 1px solid #e4ded3; word-break: break-word; }
+      .paper button { margin-top: 6px; font-size: 12px; background: #a53d32; }
+      .status { color: #5b625e; min-height: 24px; }
+      .answer { white-space: pre-wrap; line-height: 1.65; }
+      .source { background: #f1eee7; padding: 10px; margin-top: 8px; font-size: 13px; }
+      @media (max-width: 720px) { .layout { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>论文研究助手</h1>
+      <p>上传论文，基于论文内容提问。</p>
+      <div class="layout">
+        <section>
+          <h2>论文库</h2>
+          <form id="upload-form">
+            <input id="pdf" type="file" accept="application/pdf,.pdf" required />
+            <button type="submit">上传并索引</button>
+          </form>
+          <p id="upload-status" class="status"></p>
+          <div id="papers"></div>
+        </section>
+        <section>
+          <h2>开始提问</h2>
+          <form id="ask-form">
+            <textarea id="question" placeholder="例如：这篇论文解决了什么问题？" required></textarea>
+            <button type="submit">提问</button>
+          </form>
+          <p id="ask-status" class="status"></p>
+          <div id="answer"></div>
+        </section>
+      </div>
+    </main>
+    <script>
+      const papers = document.querySelector('#papers');
+      const uploadStatus = document.querySelector('#upload-status');
+      const askStatus = document.querySelector('#ask-status');
+      const answer = document.querySelector('#answer');
+
+      async function loadPapers() {
+        const response = await fetch('/api/papers');
+        const items = await response.json();
+        papers.innerHTML = items.length ? items.map((item) => `
+          <div class="paper"><strong>${item.file_name}</strong><br />
+            <small>${(item.size / 1024 / 1024).toFixed(1)} MB</small><br />
+            <button data-file="${encodeURIComponent(item.file_name)}">删除</button>
+          </div>`).join('') : '<p class="status">还没有论文</p>';
+        papers.querySelectorAll('button').forEach((button) => button.addEventListener('click', async () => {
+          await fetch(`/api/papers/${button.dataset.file}`, { method: 'DELETE' });
+          loadPapers();
+        }));
+      }
+
+      document.querySelector('#upload-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        uploadStatus.textContent = '正在上传和索引，首次运行可能需要加载本地模型...';
+        const data = new FormData();
+        data.append('file', document.querySelector('#pdf').files[0]);
+        const response = await fetch('/ingest', { method: 'POST', body: data });
+        const result = await response.json();
+        uploadStatus.textContent = response.ok ? `已索引 ${result.chunks} 个片段` : result.detail;
+        loadPapers();
+      });
+
+      document.querySelector('#ask-form').addEventListener('submit', async (event) => {
+        event.preventDefault();
+        askStatus.textContent = '正在思考...';
+        answer.innerHTML = '';
+        const response = await fetch('/ask', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: document.querySelector('#question').value, n_results: 5 })
+        });
+        const result = await response.json();
+        askStatus.textContent = response.ok ? '' : result.detail;
+        if (!response.ok) return;
+        answer.innerHTML = `<div class="answer"></div><h3>来源</h3>${result.sources.map((source) =>
+          `<div class="source">${source.file_name || ''}，第 ${source.page || '?'} 页</div>`).join('')}`;
+        answer.querySelector('.answer').textContent = result.answer;
+      });
+
+      loadPapers();
+    </script>
+  </body>
+</html>
