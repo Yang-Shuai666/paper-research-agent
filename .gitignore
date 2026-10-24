@@ -6,7 +6,10 @@ __pycache__/
 *.py[cod]
 data/uploads/
 data/qdrant/
+data/backup/
 **/chroma_db/
 data/papers/
+data/cache/
 models/
+reports/cache/
 *.egg-info/

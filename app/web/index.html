@@ -18,8 +18,23 @@
       .paper { padding: 10px 0; border-bottom: 1px solid #e4ded3; word-break: break-word; }
       .paper button { margin-top: 6px; font-size: 12px; background: #a53d32; }
       .status { color: #5b625e; min-height: 24px; }
-      .answer { white-space: pre-wrap; line-height: 1.65; }
+      .answer { line-height: 1.7; }
+      .answer h2, .answer h3, .answer h4 { margin: 18px 0 8px; line-height: 1.35; }
+      .answer p { margin: 0 0 10px; }
+      .answer ul, .answer ol { margin: 0 0 10px; padding-left: 24px; }
+      .answer li { margin: 3px 0; }
+      .answer code { background: #f1eee7; padding: 1px 4px; border-radius: 3px; font-size: 90%; }
+      .answer table { border-collapse: collapse; width: 100%; margin: 10px 0; font-size: 13px; display: block; overflow-x: auto; }
+      .answer th, .answer td { border: 1px solid #ddd6c9; padding: 6px 8px; text-align: left; vertical-align: top; }
+      .answer th { background: #f1eee7; }
+      .answer hr { border: 0; border-top: 1px solid #ddd6c9; margin: 14px 0; }
       .source { background: #f1eee7; padding: 10px; margin-top: 8px; font-size: 13px; }
+      .agent-toggle { display: flex; gap: 8px; align-items: center; margin: 10px 0; font-size: 14px; }
+      .steps { margin-top: 14px; }
+      .step { background: #eef4f1; border-left: 3px solid #175c58; padding: 8px 10px; margin: 6px 0; font-size: 13px; word-break: break-word; }
+      .step.error { background: #f8ecea; border-left-color: #a53d32; }
+      .step .meta { color: #5b625e; font-size: 12px; margin-top: 3px; }
+      .hint { color: #5b625e; font-size: 13px; }
       @media (max-width: 720px) { .layout { grid-template-columns: 1fr; } }
     </style>
   </head>
@@ -40,10 +55,15 @@
         <section>
           <h2>开始提问</h2>
           <form id="ask-form">
-            <textarea id="question" placeholder="例如：这篇论文解决了什么问题？" required></textarea>
+            <textarea id="question" placeholder="例如：这两篇论文分别解决了什么问题？" required></textarea>
+            <label class="agent-toggle">
+              <input id="agent-mode" type="checkbox" />
+              Agent 模式（多步检索，跨论文对比建议开启）
+            </label>
             <button type="submit">提问</button>
           </form>
           <p id="ask-status" class="status"></p>
+          <div id="steps" class="steps"></div>
           <div id="answer"></div>
         </section>
       </div>
@@ -53,19 +73,219 @@
       const uploadStatus = document.querySelector('#upload-status');
       const askStatus = document.querySelector('#ask-status');
       const answer = document.querySelector('#answer');
+      const stepsBox = document.querySelector('#steps');
+      const agentMode = document.querySelector('#agent-mode');
+
+      function element(tag, className, text) {
+        const node = document.createElement(tag);
+        if (className) node.className = className;
+        if (text) node.textContent = text;
+        return node;
+      }
+
+      function renderSources(sources) {
+        const wrap = document.createElement('div');
+        wrap.append(element('h3', '', '来源'));
+        if (!sources.length) {
+          wrap.append(element('p', 'hint', '没有检索到来源。'));
+          return wrap;
+        }
+        sources.forEach((source) => {
+          const ref = source.ref ? `[${source.ref}] ` : '';
+          const page = source.page ? `第 ${source.page} 页` : '';
+          const section = source.section ? ` · ${source.section}` : '';
+          wrap.append(
+            element('div', 'source', `${ref}${source.file_name || ''} ${page}${section}`)
+          );
+        });
+        return wrap;
+      }
+
+      function renderCitations(citations) {
+        if (!citations) return null;
+        const valid = citations.valid.length ? citations.valid.join(', ') : '无';
+        const invalid = citations.invalid.length ? `；无效编号 ${citations.invalid.join(', ')}` : '';
+        return element('p', 'hint', `引用编号：${valid}${invalid}`);
+      }
+
+      function renderSteps(steps) {
+        stepsBox.replaceChildren();
+        if (!steps.length) return;
+        stepsBox.append(element('h3', '', 'Agent 步骤'));
+        steps.forEach((step) => {
+          const row = element('div', step.ok ? 'step' : 'step error');
+          row.append(element('strong', '', `${step.step}. ${step.tool}`));
+          row.append(element('div', '', step.summary || ''));
+          row.append(
+            element(
+              'div',
+              'meta',
+              `${JSON.stringify(step.arguments || {})} · ${step.latency_ms} ms`
+            )
+          );
+          stepsBox.append(row);
+        });
+      }
+
+      function inlineNodes(text) {
+        const nodes = [];
+        const pattern = /(\*\*[^*]+\*\*|`[^`]+`)/g;
+        let last = 0;
+        let match = pattern.exec(text);
+        while (match) {
+          if (match.index > last) nodes.push(document.createTextNode(text.slice(last, match.index)));
+          const token = match[0];
+          const node = document.createElement(token.startsWith('**') ? 'strong' : 'code');
+          node.textContent = token.startsWith('**') ? token.slice(2, -2) : token.slice(1, -1);
+          nodes.push(node);
+          last = match.index + token.length;
+          match = pattern.exec(text);
+        }
+        if (last < text.length) nodes.push(document.createTextNode(text.slice(last)));
+        return nodes;
+      }
+
+      function appendInline(parent, text) {
+        inlineNodes(text).forEach((node) => parent.append(node));
+      }
+
+      function splitRow(line) {
+        return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((cell) => cell.trim());
+      }
+
+      function isTableSeparator(line) {
+        return line.includes('-') && /^\s*\|?[\s:|-]+\|?\s*$/.test(line);
+      }
+
+      function renderMarkdown(text) {
+        const root = element('div', 'answer');
+        const lines = text.split(/\r?\n/);
+        let i = 0;
+        while (i < lines.length) {
+          const line = lines[i];
+          if (!line.trim()) {
+            i += 1;
+            continue;
+          }
+          const heading = line.match(/^(#{1,4})\s+(.*)$/);
+          if (heading) {
+            const node = document.createElement(`h${Math.min(6, heading[1].length + 1)}`);
+            appendInline(node, heading[2]);
+            root.append(node);
+            i += 1;
+            continue;
+          }
+          if (/^\s*([-*_])\1{2,}\s*$/.test(line)) {
+            root.append(document.createElement('hr'));
+            i += 1;
+            continue;
+          }
+          if (line.trim().startsWith('|')) {
+            const rows = [];
+            while (i < lines.length && lines[i].trim().startsWith('|')) {
+              rows.push(lines[i]);
+              i += 1;
+            }
+            if (rows.length >= 2 && isTableSeparator(rows[1])) {
+              const table = document.createElement('table');
+              const headRow = document.createElement('tr');
+              splitRow(rows[0]).forEach((cell) => {
+                const th = document.createElement('th');
+                appendInline(th, cell);
+                headRow.append(th);
+              });
+              const thead = document.createElement('thead');
+              thead.append(headRow);
+              const tbody = document.createElement('tbody');
+              rows.slice(2).forEach((row) => {
+                const tr = document.createElement('tr');
+                splitRow(row).forEach((cell) => {
+                  const td = document.createElement('td');
+                  appendInline(td, cell);
+                  tr.append(td);
+                });
+                tbody.append(tr);
+              });
+              table.append(thead, tbody);
+              root.append(table);
+            } else {
+              const paragraph = document.createElement('p');
+              appendInline(paragraph, rows.join(' '));
+              root.append(paragraph);
+            }
+            continue;
+          }
+          if (/^\s*[-*]\s+/.test(line)) {
+            const list = document.createElement('ul');
+            while (i < lines.length) {
+              const item = lines[i].match(/^\s*[-*]\s+(.*)$/);
+              if (!item) break;
+              const li = document.createElement('li');
+              appendInline(li, item[1]);
+              list.append(li);
+              i += 1;
+            }
+            root.append(list);
+            continue;
+          }
+          if (/^\s*\d+[.)]\s+/.test(line)) {
+            const list = document.createElement('ol');
+            while (i < lines.length) {
+              const item = lines[i].match(/^\s*\d+[.)]\s+(.*)$/);
+              if (!item) break;
+              const li = document.createElement('li');
+              appendInline(li, item[1]);
+              list.append(li);
+              i += 1;
+            }
+            root.append(list);
+            continue;
+          }
+          const paragraph = document.createElement('p');
+          while (
+            i < lines.length &&
+            lines[i].trim() &&
+            !/^(#{1,4})\s+/.test(lines[i]) &&
+            !/^\s*[-*]\s+/.test(lines[i]) &&
+            !/^\s*\d+[.)]\s+/.test(lines[i]) &&
+            !/^\s*([-*_])\1{2,}\s*$/.test(lines[i]) &&
+            !lines[i].trim().startsWith('|')
+          ) {
+            if (paragraph.childNodes.length) paragraph.append(document.createElement('br'));
+            appendInline(paragraph, lines[i]);
+            i += 1;
+          }
+          root.append(paragraph);
+        }
+        return root;
+      }
 
       async function loadPapers() {
         const response = await fetch('/api/papers');
         const items = await response.json();
-        papers.innerHTML = items.length ? items.map((item) => `
-          <div class="paper"><strong>${item.file_name}</strong><br />
-            <small>${(item.size / 1024 / 1024).toFixed(1)} MB</small><br />
-            <button data-file="${encodeURIComponent(item.file_name)}">删除</button>
-          </div>`).join('') : '<p class="status">还没有论文</p>';
-        papers.querySelectorAll('button').forEach((button) => button.addEventListener('click', async () => {
-          await fetch(`/api/papers/${button.dataset.file}`, { method: 'DELETE' });
-          loadPapers();
-        }));
+        papers.replaceChildren();
+        if (!items.length) {
+          papers.append(element('p', 'status', '还没有论文'));
+          return;
+        }
+        items.forEach((item) => {
+          const row = element('div', 'paper');
+          row.append(
+            element('strong', '', item.file_name),
+            element('br'),
+            element('small', '', `${(item.size / 1024 / 1024).toFixed(1)} MB`),
+            element('br')
+          );
+          const button = element('button', '', '删除');
+          button.addEventListener('click', async () => {
+            await fetch(`/api/papers/${encodeURIComponent(item.file_name)}`, {
+              method: 'DELETE'
+            });
+            loadPapers();
+          });
+          row.append(button);
+          papers.append(row);
+        });
       }
 
       document.querySelector('#upload-form').addEventListener('submit', async (event) => {
@@ -81,18 +301,28 @@
 
       document.querySelector('#ask-form').addEventListener('submit', async (event) => {
         event.preventDefault();
-        askStatus.textContent = '正在思考...';
-        answer.innerHTML = '';
-        const response = await fetch('/ask', {
+        const question = document.querySelector('#question').value.trim();
+        if (!question) return;
+        const useAgent = agentMode.checked;
+        askStatus.textContent = useAgent ? 'Agent 正在检索和规划...' : '正在思考...';
+        answer.replaceChildren();
+        stepsBox.replaceChildren();
+
+        const response = await fetch(useAgent ? '/agent/ask' : '/ask', {
           method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: document.querySelector('#question').value, n_results: 5 })
+          body: JSON.stringify(
+            useAgent ? { query: question, max_steps: 6 } : { query: question, n_results: 6 }
+          )
         });
         const result = await response.json();
         askStatus.textContent = response.ok ? '' : result.detail;
         if (!response.ok) return;
-        answer.innerHTML = `<div class="answer"></div><h3>来源</h3>${result.sources.map((source) =>
-          `<div class="source">${source.file_name || ''}，第 ${source.page || '?'} 页</div>`).join('')}`;
-        answer.querySelector('.answer').textContent = result.answer;
+
+        answer.append(renderMarkdown(result.answer));
+        const citations = renderCitations(result.citations);
+        if (citations) answer.append(citations);
+        if (result.steps) renderSteps(result.steps);
+        answer.append(renderSources(result.sources || []));
       });
 
       loadPapers();

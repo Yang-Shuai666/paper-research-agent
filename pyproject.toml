@@ -15,10 +15,11 @@ dependencies = [
 [project.optional-dependencies]
 rag = [
     "chromadb>=1.0,<2.0",
+    "jieba>=0.42,<1.0",
     "pymupdf>=1.25,<2.0",
-    "qdrant-client>=1.13,<2.0",
-    "sentence-transformers>=3.4,<6.0",
-    "torch>=2.6,<3.0",
+    "rank-bm25>=0.2,<1.0",
+    "sentence-transformers>=3.4,<7.0",
+    "torch>=2.5,<3.0",
 ]
 
 dev = [
@@ -29,10 +30,17 @@ dev = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "-m 'not integration'"
+markers = [
+    "integration: requires local models, GPU, or network access",
+]
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "tests"]
 
 [build-system]
 requires = ["setuptools>=75"]

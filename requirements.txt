@@ -1,6 +1,1 @@
-chromadb
-httpx
-pymupdf
-python-multipart
-sentence-transformers
-torch>=2.5,<3.0
+-e .[rag,dev]

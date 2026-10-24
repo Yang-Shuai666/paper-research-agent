@@ -1,0 +1,1129 @@
+{
+  "records": [
+    {
+      "id": "q01",
+      "type": "factoid",
+      "question": "MAIC 的全称是什么？它试图在在线教育中平衡哪两个目标？",
+      "query": "What is the full name of MAIC, and which two goals does it aim to balance in online education?",
+      "latency_ms": 33.61415909603238,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p4_030",
+          "file": "openmaic.pdf",
+          "page": 4,
+          "score": 0.8736
+        },
+        {
+          "id": "openmaic_p4_029",
+          "file": "openmaic.pdf",
+          "page": 4,
+          "score": 0.8672
+        },
+        {
+          "id": "openmaic_p16_180",
+          "file": "openmaic.pdf",
+          "page": 16,
+          "score": 0.8309
+        },
+        {
+          "id": "openmaic_p17_185",
+          "file": "openmaic.pdf",
+          "page": 17,
+          "score": 0.8194
+        },
+        {
+          "id": "openmaic_p2_010",
+          "file": "openmaic.pdf",
+          "page": 2,
+          "score": 0.8164
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "type": "factoid",
+      "question": "MAIC-Craft 的课程准备流程包含哪两个阶段？",
+      "query": "MAIC-Craft course preparation process two stages",
+      "latency_ms": 28.975097928196192,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p6_054",
+          "file": "openmaic.pdf",
+          "page": 6,
+          "score": 0.8552
+        },
+        {
+          "id": "openmaic_p5_051",
+          "file": "openmaic.pdf",
+          "page": 5,
+          "score": 0.8457
+        },
+        {
+          "id": "openmaic_p6_058",
+          "file": "openmaic.pdf",
+          "page": 6,
+          "score": 0.8038
+        },
+        {
+          "id": "openmaic_p7_067",
+          "file": "openmaic.pdf",
+          "page": 7,
+          "score": 0.8003
+        },
+        {
+          "id": "openmaic_p11_115",
+          "file": "openmaic.pdf",
+          "page": 11,
+          "score": 0.7993
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "type": "method",
+      "question": "MAIC 的自适应引擎（Adaptive Engine）由哪两个阶段组成？",
+      "query": "What are the two stages of the Adaptive Engine in MAIC?",
+      "latency_ms": 28.237998951226473,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p8_074",
+          "file": "openmaic.pdf",
+          "page": 8,
+          "score": 0.8273
+        },
+        {
+          "id": "openmaic_p5_050",
+          "file": "openmaic.pdf",
+          "page": 5,
+          "score": 0.7986
+        },
+        {
+          "id": "openmaic_p10_106",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.7675
+        },
+        {
+          "id": "openmaic_p17_184",
+          "file": "openmaic.pdf",
+          "page": 17,
+          "score": 0.7651
+        },
+        {
+          "id": "openmaic_p11_110",
+          "file": "openmaic.pdf",
+          "page": 11,
+          "score": 0.761
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "type": "factoid",
+      "question": "MAIC 的多智能体课堂采用什么学生-智能体模式？",
+      "query": "MAIC multi-agent classroom student-agent model",
+      "latency_ms": 27.874615974724293,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p9_085",
+          "file": "openmaic.pdf",
+          "page": 9,
+          "score": 0.8404
+        },
+        {
+          "id": "openmaic_p10_103",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8325
+        },
+        {
+          "id": "openmaic_p3_021",
+          "file": "openmaic.pdf",
+          "page": 3,
+          "score": 0.823
+        },
+        {
+          "id": "openmaic_p10_102",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8129
+        },
+        {
+          "id": "openmaic_p10_106",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.812
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "type": "factoid",
+      "question": "MAIC 初始预设的四类同学智能体分别是什么？",
+      "query": "MAIC four initial preset types of classmate agents",
+      "latency_ms": 27.515744091942906,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575,
+      "top_chunks": [
+        {
+          "id": "openmaic_p9_085",
+          "file": "openmaic.pdf",
+          "page": 9,
+          "score": 0.7673
+        },
+        {
+          "id": "openmaic_p10_103",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.7593
+        },
+        {
+          "id": "openmaic_p10_096",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.7556
+        },
+        {
+          "id": "openmaic_p3_021",
+          "file": "openmaic.pdf",
+          "page": 3,
+          "score": 0.7548
+        },
+        {
+          "id": "openmaic_p10_102",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.7547
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "type": "multi_hop",
+      "question": "原始教学材料在 MAIC 的 Read 阶段会经历哪些处理，最终变成智能体可用的知识？",
+      "query": "MAIC Read stage original teaching materials processing into agent-usable knowledge",
+      "latency_ms": 27.468224987387657,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p6_055",
+          "file": "openmaic.pdf",
+          "page": 6,
+          "score": 0.861
+        },
+        {
+          "id": "openmaic_p5_050",
+          "file": "openmaic.pdf",
+          "page": 5,
+          "score": 0.8295
+        },
+        {
+          "id": "openmaic_p10_106",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8283
+        },
+        {
+          "id": "openmaic_p3_021",
+          "file": "openmaic.pdf",
+          "page": 3,
+          "score": 0.8279
+        },
+        {
+          "id": "openmaic_p6_054",
+          "file": "openmaic.pdf",
+          "page": 6,
+          "score": 0.8275
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "type": "factoid",
+      "question": "MAIC 在 TGAI 课程实验中最初注册和最终完成课程的学生人数分别是多少？",
+      "query": "MAIC TGAI course experiment initial enrollment and final course completion student numbers",
+      "latency_ms": 27.93976617977023,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p14_145",
+          "file": "openmaic.pdf",
+          "page": 14,
+          "score": 0.8416
+        },
+        {
+          "id": "openmaic_p14_146",
+          "file": "openmaic.pdf",
+          "page": 14,
+          "score": 0.8199
+        },
+        {
+          "id": "openmaic_p14_148",
+          "file": "openmaic.pdf",
+          "page": 14,
+          "score": 0.819
+        },
+        {
+          "id": "openmaic_p13_141",
+          "file": "openmaic.pdf",
+          "page": 13,
+          "score": 0.8033
+        },
+        {
+          "id": "openmaic_p15_165",
+          "file": "openmaic.pdf",
+          "page": 15,
+          "score": 0.7972
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "type": "factoid",
+      "question": "MAIC 的实证研究持续多长时间，在什么课程中开展？",
+      "query": "MAIC empirical study duration and course implementation",
+      "latency_ms": 27.172590140253305,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.25,
+      "ndcg@10": 0.43067655807339306,
+      "top_chunks": [
+        {
+          "id": "openmaic_p13_141",
+          "file": "openmaic.pdf",
+          "page": 13,
+          "score": 0.8142
+        },
+        {
+          "id": "openmaic_p10_106",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8092
+        },
+        {
+          "id": "openmaic_p4_035",
+          "file": "openmaic.pdf",
+          "page": 4,
+          "score": 0.803
+        },
+        {
+          "id": "openmaic_p14_148",
+          "file": "openmaic.pdf",
+          "page": 14,
+          "score": 0.7957
+        },
+        {
+          "id": "openmaic_p4_032",
+          "file": "openmaic.pdf",
+          "page": 4,
+          "score": 0.7955
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "type": "method",
+      "question": "MAIC-Craft 评估中，长上下文连贯性（Long-Context Coherence）的自动评分和人工评分分别是多少？教学法（Pedagogy）得分是多少？",
+      "query": "MAIC-Craft Long-Context Coherence automatic score human score Pedagogy score",
+      "latency_ms": 27.818549890071154,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "openmaic_p12_123",
+          "file": "openmaic.pdf",
+          "page": 12,
+          "score": 0.901
+        },
+        {
+          "id": "openmaic_p11_120",
+          "file": "openmaic.pdf",
+          "page": 11,
+          "score": 0.8453
+        },
+        {
+          "id": "openmaic_p11_119",
+          "file": "openmaic.pdf",
+          "page": 11,
+          "score": 0.8394
+        },
+        {
+          "id": "openmaic_p12_122",
+          "file": "openmaic.pdf",
+          "page": 12,
+          "score": 0.8321
+        },
+        {
+          "id": "openmaic_p12_124",
+          "file": "openmaic.pdf",
+          "page": 12,
+          "score": 0.832
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "type": "factoid",
+      "question": "RAG 综述将 RAG 的发展划分为哪三种范式？",
+      "query": "RAG survey three paradigms of RAG development",
+      "latency_ms": 27.19115000218153,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p2_022",
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "score": 0.8476
+        },
+        {
+          "id": "rag_survey_p16_189",
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "score": 0.8471
+        },
+        {
+          "id": "rag_survey_p1_003",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.8315
+        },
+        {
+          "id": "rag_survey_p1_012",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.8159
+        },
+        {
+          "id": "rag_survey_p16_188",
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "score": 0.8154
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "type": "factoid",
+      "question": "Naive RAG 的基本流程包含哪三个步骤？",
+      "query": "Naive RAG basic workflow three steps",
+      "latency_ms": 27.455662842839956,
+      "recall@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.125,
+      "ndcg@10": 0.31546487678572877,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p4_033",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.7963
+        },
+        {
+          "id": "rag_survey_p2_022",
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "score": 0.7837
+        },
+        {
+          "id": "rag_survey_p1_003",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7728
+        },
+        {
+          "id": "rag_survey_p16_189",
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "score": 0.7707
+        },
+        {
+          "id": "rag_survey_p5_058",
+          "file": "rag_survey.pdf",
+          "page": 5,
+          "score": 0.7625
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "type": "method",
+      "question": "Advanced RAG 主要在哪些阶段进行优化？",
+      "query": "Advanced RAG optimization stages",
+      "latency_ms": 27.504193130880594,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p3_032",
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "score": 0.782
+        },
+        {
+          "id": "rag_survey_p2_022",
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "score": 0.7623
+        },
+        {
+          "id": "rag_survey_p4_033",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.7605
+        },
+        {
+          "id": "rag_survey_p16_189",
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "score": 0.756
+        },
+        {
+          "id": "rag_survey_p4_039",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.7515
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "type": "method",
+      "question": "Modular RAG 引入了哪些新的专用模块？",
+      "query": "Modular RAG new specialized modules",
+      "latency_ms": 27.59725204668939,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p4_039",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.8203
+        },
+        {
+          "id": "rag_survey_p4_038",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.8134
+        },
+        {
+          "id": "rag_survey_p5_045",
+          "file": "rag_survey.pdf",
+          "page": 5,
+          "score": 0.8106
+        },
+        {
+          "id": "rag_survey_p4_040",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.7996
+        },
+        {
+          "id": "rag_survey_p5_046",
+          "file": "rag_survey.pdf",
+          "page": 5,
+          "score": 0.7899
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "type": "method",
+      "question": "RAG 综述中提到的查询转换（Query Transformation）方法有哪些代表？",
+      "query": "RAG survey Query Transformation representative methods",
+      "latency_ms": 27.297449065372348,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p3_026",
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "score": 0.7642
+        },
+        {
+          "id": "rag_survey_p3_024",
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "score": 0.7553
+        },
+        {
+          "id": "rag_survey_p9_097",
+          "file": "rag_survey.pdf",
+          "page": 9,
+          "score": 0.7545
+        },
+        {
+          "id": "rag_survey_p10_114",
+          "file": "rag_survey.pdf",
+          "page": 10,
+          "score": 0.7538
+        },
+        {
+          "id": "rag_survey_p15_174",
+          "file": "rag_survey.pdf",
+          "page": 15,
+          "score": 0.7502
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "type": "factoid",
+      "question": "RAG 评估通常关注哪七个方面？",
+      "query": "RAG evaluation seven key aspects",
+      "latency_ms": 27.420636033639312,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p14_163",
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "score": 0.7502
+        },
+        {
+          "id": "rag_survey_p12_148",
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "score": 0.7275
+        },
+        {
+          "id": "rag_survey_p12_151",
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "score": 0.7234
+        },
+        {
+          "id": "rag_survey_p15_171",
+          "file": "rag_survey.pdf",
+          "page": 15,
+          "score": 0.7074
+        },
+        {
+          "id": "rag_survey_p12_150",
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "score": 0.7073
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "type": "factoid",
+      "question": "RAG 综述列举了哪些评估框架或工具？",
+      "query": "RAG survey evaluation frameworks and tools",
+      "latency_ms": 27.383675100281835,
+      "recall@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.14285714285714285,
+      "ndcg@10": 0.3333333333333333,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p14_161",
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "score": 0.8034
+        },
+        {
+          "id": "rag_survey_p12_148",
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "score": 0.7946
+        },
+        {
+          "id": "rag_survey_p1_003",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7936
+        },
+        {
+          "id": "rag_survey_p1_014",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7925
+        },
+        {
+          "id": "rag_survey_p12_144",
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "score": 0.7924
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "type": "multi_hop",
+      "question": "RAG 中的“Lost in the middle”问题出现在哪个阶段？综述建议如何缓解？",
+      "query": "RAG \"Lost in the middle\" problem stage survey mitigation recommendations",
+      "latency_ms": 27.515206020325422,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p10_112",
+          "file": "rag_survey.pdf",
+          "page": 10,
+          "score": 0.8003
+        },
+        {
+          "id": "rag_survey_p1_006",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7721
+        },
+        {
+          "id": "rag_survey_p1_011",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7685
+        },
+        {
+          "id": "rag_survey_p2_022",
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "score": 0.7671
+        },
+        {
+          "id": "rag_survey_p1_012",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7659
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "type": "factoid",
+      "question": "AutoGen 的两个核心概念是什么？",
+      "query": "AutoGen core concepts conversable agents conversation programming",
+      "latency_ms": 27.244233060628176,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.3333333333333333,
+      "ndcg@10": 0.5,
+      "top_chunks": [
+        {
+          "id": "autogen_p2_016",
+          "file": "autogen.pdf",
+          "page": 2,
+          "score": 0.8659
+        },
+        {
+          "id": "autogen_p2_015",
+          "file": "autogen.pdf",
+          "page": 2,
+          "score": 0.865
+        },
+        {
+          "id": "autogen_p3_021",
+          "file": "autogen.pdf",
+          "page": 3,
+          "score": 0.8623
+        },
+        {
+          "id": "autogen_p5_039",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.8577
+        },
+        {
+          "id": "autogen_p2_012",
+          "file": "autogen.pdf",
+          "page": 2,
+          "score": 0.856
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "type": "factoid",
+      "question": "AutoGen 内置的回复函数（reply functions）主要基于哪几类能力？",
+      "query": "AutoGen built-in reply functions based on which capability categories",
+      "latency_ms": 27.23787585273385,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "ndcg@10": 0.6309297535714575,
+      "top_chunks": [
+        {
+          "id": "autogen_p3_026",
+          "file": "autogen.pdf",
+          "page": 3,
+          "score": 0.7962
+        },
+        {
+          "id": "autogen_p5_041",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.7943
+        },
+        {
+          "id": "autogen_p5_040",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.7726
+        },
+        {
+          "id": "autogen_p5_049",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.7715
+        },
+        {
+          "id": "autogen_p5_039",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.7695
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "type": "method",
+      "question": "AutoGen 的 GroupChatManager 在动态群聊中重复执行哪三个步骤？",
+      "query": "AutoGen GroupChatManager dynamic group chat three repeated steps",
+      "latency_ms": 27.628066018223763,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "autogen_p9_087",
+          "file": "autogen.pdf",
+          "page": 9,
+          "score": 0.8668
+        },
+        {
+          "id": "autogen_p28_255",
+          "file": "autogen.pdf",
+          "page": 28,
+          "score": 0.8317
+        },
+        {
+          "id": "autogen_p9_086",
+          "file": "autogen.pdf",
+          "page": 9,
+          "score": 0.826
+        },
+        {
+          "id": "autogen_p28_256",
+          "file": "autogen.pdf",
+          "page": 28,
+          "score": 0.7926
+        },
+        {
+          "id": "autogen_p20_176",
+          "file": "autogen.pdf",
+          "page": 20,
+          "score": 0.7617
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "type": "factoid",
+      "question": "在 MATH 全测试集上，AutoGen 与 GPT-4 的准确率分别是多少？",
+      "query": "AutoGen GPT-4 accuracy on full MATH test set",
+      "latency_ms": 27.63259201310575,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "autogen_p20_172",
+          "file": "autogen.pdf",
+          "page": 20,
+          "score": 0.8529
+        },
+        {
+          "id": "autogen_p20_173",
+          "file": "autogen.pdf",
+          "page": 20,
+          "score": 0.833
+        },
+        {
+          "id": "rag_survey_p10_123",
+          "file": "rag_survey.pdf",
+          "page": 10,
+          "score": 0.7842
+        },
+        {
+          "id": "autogen_p19_163",
+          "file": "autogen.pdf",
+          "page": 19,
+          "score": 0.7795
+        },
+        {
+          "id": "autogen_p6_056",
+          "file": "autogen.pdf",
+          "page": 6,
+          "score": 0.7676
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "type": "method",
+      "question": "AutoGen 的 ALFWorld 应用由哪两个智能体组成，各自负责什么？",
+      "query": "AutoGen ALFWorld application two agents roles responsibilities",
+      "latency_ms": 27.18169614672661,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "autogen_p8_074",
+          "file": "autogen.pdf",
+          "page": 8,
+          "score": 0.8267
+        },
+        {
+          "id": "autogen_p24_215",
+          "file": "autogen.pdf",
+          "page": 24,
+          "score": 0.8145
+        },
+        {
+          "id": "autogen_p24_212",
+          "file": "autogen.pdf",
+          "page": 24,
+          "score": 0.8113
+        },
+        {
+          "id": "autogen_p8_073",
+          "file": "autogen.pdf",
+          "page": 8,
+          "score": 0.8009
+        },
+        {
+          "id": "autogen_p3_026",
+          "file": "autogen.pdf",
+          "page": 3,
+          "score": 0.7934
+        }
+      ]
+    },
+    {
+      "id": "q23",
+      "type": "multi_hop",
+      "question": "AutoGen 的检索增强聊天（Retrieval-augmented Chat）如何组织多轮对话？",
+      "query": "AutoGen Retrieval-augmented Chat multi-turn dialogue organization",
+      "latency_ms": 27.257408015429974,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "ndcg@10": 1.0,
+      "top_chunks": [
+        {
+          "id": "autogen_p22_197",
+          "file": "autogen.pdf",
+          "page": 22,
+          "score": 0.8276
+        },
+        {
+          "id": "autogen_p6_061",
+          "file": "autogen.pdf",
+          "page": 6,
+          "score": 0.8256
+        },
+        {
+          "id": "autogen_p6_062",
+          "file": "autogen.pdf",
+          "page": 6,
+          "score": 0.8252
+        },
+        {
+          "id": "autogen_p22_192",
+          "file": "autogen.pdf",
+          "page": 22,
+          "score": 0.8209
+        },
+        {
+          "id": "autogen_p5_039",
+          "file": "autogen.pdf",
+          "page": 5,
+          "score": 0.8186
+        }
+      ]
+    },
+    {
+      "id": "q24",
+      "type": "cross_paper",
+      "question": "MAIC 的多智能体课堂与 AutoGen 的多智能体框架在角色设计上有什么不同？",
+      "query": "MAIC multi-agent classroom AutoGen multi-agent framework role design comparison",
+      "latency_ms": 27.070486918091774,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.5,
+      "ndcg@10": 0.6509209298071326,
+      "top_chunks": [
+        {
+          "id": "openmaic_p5_050",
+          "file": "openmaic.pdf",
+          "page": 5,
+          "score": 0.816
+        },
+        {
+          "id": "openmaic_p10_103",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8157
+        },
+        {
+          "id": "openmaic_p10_102",
+          "file": "openmaic.pdf",
+          "page": 10,
+          "score": 0.8119
+        },
+        {
+          "id": "autogen_p3_026",
+          "file": "autogen.pdf",
+          "page": 3,
+          "score": 0.808
+        },
+        {
+          "id": "openmaic_p4_032",
+          "file": "openmaic.pdf",
+          "page": 4,
+          "score": 0.8058
+        }
+      ]
+    },
+    {
+      "id": "q25",
+      "type": "cross_paper",
+      "question": "MAIC-Craft 的 Open-Ended RAG 与 RAG 综述中的 Advanced/Modular RAG 有哪些对应关系？",
+      "query": "MAIC-Craft Open-Ended RAG correspondence to Advanced RAG and Modular RAG in RAG surveys",
+      "latency_ms": 27.96319010667503,
+      "recall@5": 0.5,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "ndcg@10": 0.6131471927654584,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p4_038",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.8215
+        },
+        {
+          "id": "rag_survey_p4_033",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.8145
+        },
+        {
+          "id": "rag_survey_p4_039",
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "score": 0.8127
+        },
+        {
+          "id": "rag_survey_p1_003",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.8121
+        },
+        {
+          "id": "rag_survey_p2_017",
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "score": 0.8046
+        }
+      ]
+    },
+    {
+      "id": "q26",
+      "type": "cross_paper",
+      "question": "三篇论文分别如何评估各自系统？",
+      "query": "How do the three papers evaluate their respective systems?",
+      "latency_ms": 27.442981023341417,
+      "recall@5": 0.6666666666666666,
+      "recall@10": 0.6666666666666666,
+      "mrr": 0.5,
+      "ndcg@10": 0.49818925746641285,
+      "top_chunks": [
+        {
+          "id": "rag_survey_p1_013",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7476
+        },
+        {
+          "id": "openmaic_p11_118",
+          "file": "openmaic.pdf",
+          "page": 11,
+          "score": 0.7459
+        },
+        {
+          "id": "rag_survey_p1_004",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7438
+        },
+        {
+          "id": "rag_survey_p14_160",
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "score": 0.7417
+        },
+        {
+          "id": "rag_survey_p1_003",
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "score": 0.7342
+        }
+      ]
+    }
+  ],
+  "overall": {
+    "recall@5": 0.8910256410256411,
+    "recall@10": 0.967948717948718,
+    "mrr": 0.7506868131868133,
+    "ndcg@10": 0.7924458328990144,
+    "n": 26
+  }
+}

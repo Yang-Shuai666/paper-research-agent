@@ -1,12 +1,20 @@
 from pathlib import Path
+from typing import Annotated
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse, Response
 from pydantic import BaseModel, Field
 
+from app.config import get_settings
+from app.rag.agent import run_agent
+from app.rag.bm25_index import invalidate_bm25_index
+from app.rag.citations import extract_citations
+from app.rag.context import get_expander
 from app.rag.ingest import ingest_pdf
 from app.rag.llm import generate_answer
-from app.rag.vector_store import ChromaStore
+from app.rag.pipeline import build_retriever
+from app.rag.vector_store import get_store
 
 app = FastAPI(
     title="Paper Research Agent",
@@ -21,7 +29,12 @@ class SearchRequest(BaseModel):
 
 
 class AskRequest(SearchRequest):
-    pass
+    n_results: int = Field(default=6, ge=1, le=20)
+
+
+class AgentRequest(BaseModel):
+    query: str = Field(min_length=1)
+    max_steps: int = Field(default=6, ge=1, le=6)
 
 
 PAPERS_DIR = Path(__file__).resolve().parents[1] / "data" / "papers"
@@ -57,6 +70,14 @@ def list_papers() -> list[dict[str, str | int]]:
     ]
 
 
+@app.get("/api/stats")
+def stats() -> dict[str, int]:
+    return {
+        "papers": len(list(PAPERS_DIR.glob("*.pdf"))) if PAPERS_DIR.exists() else 0,
+        "chunks": get_store().count(),
+    }
+
+
 @app.delete("/api/papers/{file_name}")
 def delete_paper(file_name: str) -> dict[str, str]:
     safe_name = Path(file_name).name
@@ -67,39 +88,41 @@ def delete_paper(file_name: str) -> dict[str, str]:
     if not paper_path.exists():
         raise HTTPException(status_code=404, detail="Paper not found")
 
-    ChromaStore().delete_document(safe_name)
+    get_store().delete_document(safe_name)
+    invalidate_bm25_index()
     paper_path.unlink()
     return {"file_name": safe_name, "status": "deleted"}
 
 
 @app.post("/search")
 def search(request: SearchRequest) -> dict:
-    result = ChromaStore().search(request.query, n_results=request.n_results)
+    chunks = build_retriever().search(request.query, top_k=request.n_results)
     return {
         "query": request.query,
         "results": [
             {
-                "id": result["ids"][0][index],
-                "document": result["documents"][0][index],
-                "distance": result["distances"][0][index],
-                "metadata": result["metadatas"][0][index],
+                "id": chunk.id,
+                "document": chunk.text,
+                "score": chunk.score,
+                "metadata": chunk.metadata,
             }
-            for index in range(len(result["ids"][0]))
+            for chunk in chunks
         ],
     }
 
 
 @app.post("/ingest")
-async def ingest(file: UploadFile = File(...)) -> dict:
+async def ingest(file: Annotated[UploadFile, File()]) -> dict:
     file_name = Path(file.filename or "").name
     if not file_name.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are supported")
 
     PAPERS_DIR.mkdir(parents=True, exist_ok=True)
     target_path = PAPERS_DIR / file_name
-    target_path.write_bytes(await file.read())
+    content = await file.read()
+    await run_in_threadpool(target_path.write_bytes, content)
 
-    count = ingest_pdf(target_path)
+    count = await run_in_threadpool(ingest_pdf, target_path)
     return {
         "file_name": file_name,
         "path": str(target_path),
@@ -109,14 +132,12 @@ async def ingest(file: UploadFile = File(...)) -> dict:
 
 @app.post("/ask")
 async def ask(request: AskRequest) -> dict:
-    result = ChromaStore().search(request.query, n_results=request.n_results)
-    contexts = [
-        {
-            "document": result["documents"][0][index],
-            "metadata": result["metadatas"][0][index],
-        }
-        for index in range(len(result["ids"][0]))
-    ]
+    settings = get_settings()
+    chunks = build_retriever().search(request.query, top_k=request.n_results)
+    if settings.enable_context_expansion:
+        chunks = get_expander().expand(chunks)
+
+    contexts = [{"document": chunk.text, "metadata": chunk.metadata} for chunk in chunks]
     try:
         answer = await generate_answer(request.query, contexts)
     except RuntimeError as error:
@@ -124,8 +145,38 @@ async def ask(request: AskRequest) -> dict:
     except Exception as error:
         raise HTTPException(status_code=502, detail=f"LLM request failed: {error}") from error
 
+    valid_citations, invalid_citations = extract_citations(answer.text, len(contexts))
     return {
         "question": request.query,
-        "answer": answer,
-        "sources": [item["metadata"] for item in contexts],
+        "answer": answer.text,
+        "citations": {
+            "valid": valid_citations,
+            "invalid": invalid_citations,
+        },
+        "sources": [{**chunk.metadata, "score": round(chunk.score, 4)} for chunk in chunks],
+    }
+
+
+@app.post("/agent/ask")
+async def agent_ask(request: AgentRequest) -> dict:
+    try:
+        result = await run_agent(request.query, max_steps=request.max_steps)
+    except RuntimeError as error:
+        raise HTTPException(status_code=503, detail=str(error)) from error
+    except Exception as error:
+        raise HTTPException(status_code=502, detail=f"Agent request failed: {error}") from error
+
+    return {
+        "question": request.query,
+        "answer": result.text,
+        "citations": result.citations,
+        "sources": result.sources,
+        "steps": result.steps,
+        "usage": {
+            "prompt_tokens": result.prompt_tokens,
+            "completion_tokens": result.completion_tokens,
+            "model": result.model,
+        },
+        "stop_reason": result.stop_reason,
+        "latency_ms": round(result.elapsed_ms, 1),
     }

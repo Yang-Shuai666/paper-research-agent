@@ -1,0 +1,1761 @@
+{
+  "records": [
+    {
+      "id": "q01",
+      "type": "factoid",
+      "question": "MAIC 的全称是什么？它试图在在线教育中平衡哪两个目标？",
+      "answerable": true,
+      "answer": "结论：MAIC 的全称是“Massive AI-Empowered Course”[1][3]；它试图在在线教育中平衡“可扩展性（scalability）”与“适应性（adaptivity）”这两个目标[1][3][4]。\n\n依据：片段明确指出 MAIC 是“Massive AI-Empowered Course”[1][3]，并说明其目标是平衡在线教育的 scalability 和 adaptivity[1][3]。片段还提到，MAIC 预期通过多智能体系统增强 scalability 与 adaptability[4]。",
+      "reference_answer": "MAIC 是 Massive AI-Empowered Course（大型人工智能赋能课程）。它通过 LLM 驱动的多智能体系统构建 AI 增强课堂，目标是在可扩展性（scalability）与自适应性（adaptivity）之间取得平衡。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 2,
+          "section": "4 Department of Statistics and Data Science, Tsinghua University, Beijing 100084"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 16,
+          "section": "7    Predicted Impact"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 17,
+          "section": "8    Conclusions"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 16,
+          "section": "7    Predicted Impact"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3,
+        4
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确给出 MAIC 全称及 scalability 与 adaptivity 两个平衡目标，且引用片段均能支撑相应陈述。"
+      },
+      "latency_retrieval_ms": 125.837666913867,
+      "latency_generation_ms": 1358.3565750159323,
+      "prompt_tokens": 907,
+      "completion_tokens": 114
+    },
+    {
+      "id": "q02",
+      "type": "factoid",
+      "question": "MAIC-Craft 的课程准备流程包含哪两个阶段？",
+      "answerable": true,
+      "answer": "MAIC-Craft 的课程准备流程包含两个阶段：阅读阶段（Read Stage）和规划阶段（Plan Stage）[1][2][3]。",
+      "reference_answer": "包含 Read 阶段和 Plan 阶段。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "3.1.1    Read Stage"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 7,
+          "section": "3.1.2    Plan Stage"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 5,
+          "section": "3.1    Teaching: MAIC Course Preparation"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 5,
+          "section": "3.1    Teaching: MAIC Course Preparation"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 7,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确指出 Read Stage 和 Plan Stage 两个阶段，与参考答案一致，且引用[1][2][3]均能支撑该陈述。"
+      },
+      "latency_retrieval_ms": 204.8474820330739,
+      "latency_generation_ms": 1102.2145270835608,
+      "prompt_tokens": 807,
+      "completion_tokens": 97
+    },
+    {
+      "id": "q03",
+      "type": "method",
+      "question": "MAIC 的自适应引擎（Adaptive Engine）由哪两个阶段组成？",
+      "answerable": true,
+      "answer": "MAIC 的自适应引擎由以下两个阶段组成：1）认知学生建模（cognitive student modeling），为每位学生构建详细画像；2）词元级个性化（token-level personalization），在细粒度层面改编脚本 [1]。\n\n依据：论文指出该引擎采用两阶段流水线，并明确列出这两个阶段及其作用 [1]。",
+      "reference_answer": "由认知学生建模（Cognitive Student Modeling）和 token 级个性化（Token-Level Personalization）两个阶段组成。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 8,
+          "section": "3.2    MAIC Adaptive Engine"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 5,
+          "section": "3    MAIC"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4    Key Technique Evaluation"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 7,
+          "section": "3.1.2    Plan Stage"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确列出认知学生建模与词元级个性化两个阶段，且引用片段[1]明确支持该两阶段流水线。"
+      },
+      "latency_retrieval_ms": 191.98892498388886,
+      "latency_generation_ms": 1308.0389578826725,
+      "prompt_tokens": 777,
+      "completion_tokens": 73
+    },
+    {
+      "id": "q04",
+      "type": "factoid",
+      "question": "MAIC 的多智能体课堂采用什么学生-智能体模式？",
+      "answerable": true,
+      "answer": "MAIC 的多智能体课堂采用“1 名学生用户 + N 个 AI 智能体”的模式 [1]。在该环境中，AI 教师负责控制学习进度、讲解课程内容、提问和切换 PowerPoint 幻灯片，AI 助教则负责维持课堂秩序并防止内容偏离 [1]。",
+      "reference_answer": "采用“1 Student user + N AI Agents”模式，即一名学生用户与多个 AI 智能体（AI 教师、助教、同学等）共同构成课堂。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 9,
+          "section": "3.3.1    Environment Principles"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "3.3.3    Classroom Management"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "3.3.3    Classroom Management"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确给出“1 Student user + N AI Agents”模式，相关职责陈述均可在引用[1]中找到依据。"
+      },
+      "latency_retrieval_ms": 196.11135683953762,
+      "latency_generation_ms": 1333.6708238348365,
+      "prompt_tokens": 741,
+      "completion_tokens": 103
+    },
+    {
+      "id": "q05",
+      "type": "factoid",
+      "question": "MAIC 初始预设的四类同学智能体分别是什么？",
+      "answerable": true,
+      "answer": "信息不足：提供的片段仅能确认初始预设的同学智能体共四类 [1][2]，且其中一类为“Class Clown (TI, EC, CM)” [1]；其余三类同学智能体的名称在片段中未给出，因此无法确定四类分别是什么。",
+      "reference_answer": "Class Clown（班级小丑）、Deep Thinker（深度思考者）、Note Taker（笔记记录者）和 Inquisitive Mind（好奇探索者）。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 9,
+          "section": "3.3.1    Environment Principles"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 0,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "false_refusal",
+        "reason": "问题可回答，但系统答案以信息不足为由拒绝，未给出四类同学智能体的完整名称。"
+      },
+      "latency_retrieval_ms": 192.95312301255763,
+      "latency_generation_ms": 2132.5304131023586,
+      "prompt_tokens": 819,
+      "completion_tokens": 237
+    },
+    {
+      "id": "q06",
+      "type": "multi_hop",
+      "question": "原始教学材料在 MAIC 的 Read 阶段会经历哪些处理，最终变成智能体可用的知识？",
+      "answerable": true,
+      "answer": "结论：按片段可确认，原始教学材料在 Read 阶段先被预处理，再通过抽取函数处理；多模态内容会生成“全面且具教学意识的描述”，同时通过知识抽取被组织为结构化知识库并跨模态建立分类关系，最终形成结构化资源集 [1]。该结构化资源集是后续 Plan 阶段所基于的“高度结构化资源” [5][4]。但片段未明确说明该资源集进一步转化为“智能体可用知识”的完整接口或机制。\n\n处理流程与产物：\n\n1. 上传资源先经过预处理，随后 MAIC-Craft 使用抽取函数完成 Read 阶段 [1]。\n2. 多模态内容由基于 ML-LM 的方法处理，生成全面且具教学意识的描述 [1]。\n3. 同时，MAIC-Craft 实施知识抽取方法，将教育内容组织为结构化知识库，并在不同资源模态之间建立分类关系 [1]。\n4. 这些结构化知识库组件构成最终的结构化资源集 [1]。\n5. MAIC-Craft 的课程准备工作流包括 Read 和 Plan 两个阶段 [5]；Plan 阶段基于高度结构化资源构建教学动作表示语言，以把交互式内容呈现、自适应提问和多模态内容交付等教学功能纳入预设课堂 [4]。\n\n信息不足：片段没有明确说明 Read 阶段产出的结构化资源集如何被智能体直接调用、以何种知识表示供智能体使用，以及“智能体可用知识”的最终形态。",
+      "reference_answer": "先通过多模态 LLM 提取文本与视觉内容（音频还会转写），再构建知识库和知识感知的章节划分；随后进行查询生成（Query Generation）和开放式 RAG（Open-Ended RAG），最后生成教学脚本等内容并交给智能体使用。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 7,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "3.1.1    Read Stage"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1    Learning Material Generation"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 7,
+          "section": "3.1.2    Plan Stage"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        4,
+        5
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案基于片段正确描述了Read阶段的预处理、多模态抽取和结构化知识库，但遗漏了查询生成、开放式RAG及最终生成教学脚本供智能体使用等关键环节，且误称信息不足。"
+      },
+      "latency_retrieval_ms": 205.1556899677962,
+      "latency_generation_ms": 13640.75811416842,
+      "prompt_tokens": 789,
+      "completion_tokens": 2079
+    },
+    {
+      "id": "q07",
+      "type": "factoid",
+      "question": "MAIC 在 TGAI 课程实验中最初注册和最终完成课程的学生人数分别是多少？",
+      "answerable": true,
+      "answer": "结论：在 TGAI 课程实验中，最初注册学生超过 500 人，最终完成课程的学生为 319 人 [1][2]。\n\n依据：片段明确指出“over 500 students initially registered”，并且“a total of 319 students ultimately completed the course within the study period” [1][2]。",
+      "reference_answer": "超过 500 名学生注册，最终 319 名学生在研究周期内完成课程。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "5.1    Student Engagement in MAIC"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 15,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确给出最初注册超过500人、最终完成319人，且引用片段[1][2]明确支持该信息。"
+      },
+      "latency_retrieval_ms": 236.59719806164503,
+      "latency_generation_ms": 1549.4785588234663,
+      "prompt_tokens": 857,
+      "completion_tokens": 185
+    },
+    {
+      "id": "q08",
+      "type": "factoid",
+      "question": "MAIC 的实证研究持续多长时间，在什么课程中开展？",
+      "answerable": true,
+      "answer": "信息不足：提供的片段仅说明开展了大规模用户实证研究并获得清华大学伦理批准 [3]，以及最终有319名学生完成课程 [1][6]，但没有给出研究的持续时长和具体课程名称。",
+      "reference_answer": "在 Towards General Artificial Intelligence（TGAI）课程中开展了为期两个月的实验干预。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 13,
+          "section": "5    Empirical Evaluation"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "3.3.3    Classroom Management"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "5.1    Student Engagement in MAIC"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 0,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "false_refusal",
+        "reason": "问题可回答，但系统以信息不足拒绝作答，未给出TGAI课程和两个月实验干预这一关键信息。"
+      },
+      "latency_retrieval_ms": 200.74467291124165,
+      "latency_generation_ms": 1605.6017049122602,
+      "prompt_tokens": 714,
+      "completion_tokens": 56
+    },
+    {
+      "id": "q09",
+      "type": "method",
+      "question": "MAIC-Craft 评估中，长上下文连贯性（Long-Context Coherence）的自动评分和人工评分分别是多少？教学法（Pedagogy）得分是多少？",
+      "answerable": true,
+      "answer": "结论：MAIC-Craft 的长上下文连贯性自动评分为 **3.89**，人工评分为 **2.44**；教学法（Pedagogy）得分为 **3.92**（该片段中为自动评估得分）[1][2][3]。\n\n依据：片段[1]明确给出长上下文连贯性在自动评估中为 3.89、人工评估中为 2.44[1]；片段[2]的表中 MAIC-Craft 对应 Pedagogy 为 3.92[2]；片段[3]也明确提到 pedagogy 得分为 3.92[3]。片段中未给出教学法的人工评分。",
+      "reference_answer": "长上下文连贯性自动评分为 3.89，人工评分为 2.44；教学法得分为 3.92。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 12,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.3    Results"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 12,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.3    Results"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 12,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.2    Evaluation Metrics"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案与参考答案一致，长上下文连贯性自动/人工评分及教学法得分均准确，且引用片段有效支撑。"
+      },
+      "latency_retrieval_ms": 239.4403382204473,
+      "latency_generation_ms": 4581.246927147731,
+      "prompt_tokens": 864,
+      "completion_tokens": 692
+    },
+    {
+      "id": "q10",
+      "type": "factoid",
+      "question": "RAG 综述将 RAG 的发展划分为哪三种范式？",
+      "answerable": true,
+      "answer": "结论：RAG 综述将 RAG 的发展划分为三种范式：Naive RAG、Advanced RAG 和 Modular RAG。[1][2][3][5]\n\n依据：\n- 结论部分明确列出 RAG 框架内的三种发展范式为 Naive、Advanced 和 Modular RAG，并指出每一范式都是对前一范式的渐进式增强。[1][2]\n- 概述部分同样将 RAG 研究范式划分为 Naive RAG、Advanced RAG 和 Modular RAG 三个阶段。[3]\n- 引言/综述介绍也说明本综述考察 RAG 范式的演进，涵盖 Naive RAG、Advanced RAG 和 Modular RAG。[5]",
+      "reference_answer": "Naive RAG、Advanced RAG 和 Modular RAG。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "II. OVERVIEW OF RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确完整列出三种范式，且所有陈述均有有效检索片段支撑。"
+      },
+      "latency_retrieval_ms": 204.93918494321406,
+      "latency_generation_ms": 2368.4115090873092,
+      "prompt_tokens": 836,
+      "completion_tokens": 147
+    },
+    {
+      "id": "q11",
+      "type": "factoid",
+      "question": "Naive RAG 的基本流程包含哪三个步骤？",
+      "answerable": true,
+      "answer": "结论：Naive RAG 的基本流程包含三个步骤：索引（Indexing）、检索（Retrieval）和生成（Generation）[1][2][3]。\n\n依据：Naive RAG 遵循包含索引、检索和生成的传统流程，也被称为“Retrieve-Read”框架[2]；其流程具体为：1）索引，2）检索与问题最相关的 Top k 个文本块，3）生成，将原始问题和检索到的文本块一起输入 LLM 生成最终答案[3]。",
+      "reference_answer": "索引（Indexing）、检索（Retrieval）和生成（Generation），也被称为 Retrieve-Read 框架。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "II. OVERVIEW OF RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确完整列出索引、检索和生成三个步骤，且各项陈述均有对应片段支撑。"
+      },
+      "latency_retrieval_ms": 153.98348704911768,
+      "latency_generation_ms": 2099.4042770471424,
+      "prompt_tokens": 851,
+      "completion_tokens": 292
+    },
+    {
+      "id": "q12",
+      "type": "method",
+      "question": "Advanced RAG 主要在哪些阶段进行优化？",
+      "answerable": true,
+      "answer": "结论：Advanced RAG 主要围绕**检索前（pre-retrieval）**和**检索后（post-retrieval）**阶段进行优化，并通过改进索引技术来提升检索质量 [1][3]。\n\n依据：片段指出 Advanced RAG 提出了围绕 pre-retrieval 和 post-retrieval 的多种优化策略，整体流程仍类似 Naive RAG [1]；同时说明其聚焦提升检索质量，采用检索前和检索后策略，并通过滑动窗口、细粒度分割和引入元数据等改进索引技术 [3]。",
+      "reference_answer": "主要在检索前（pre-retrieval）和检索后（post-retrieval）阶段进行优化，同时保留链式的检索-生成结构。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "section": "B. Advanced RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "II. OVERVIEW OF RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案正确指出 Advanced RAG 主要在检索前和检索后阶段优化，引用有效且陈述有片段依据。"
+      },
+      "latency_retrieval_ms": 200.1920158509165,
+      "latency_generation_ms": 2513.5208561550826,
+      "prompt_tokens": 855,
+      "completion_tokens": 314
+    },
+    {
+      "id": "q13",
+      "type": "method",
+      "question": "Modular RAG 引入了哪些新的专用模块？",
+      "answerable": true,
+      "answer": "结论：就所给片段而言，Modular RAG 明确命名的专用模块包括 **Search module（搜索模块）**，以及 Rewrite-Retrieve-Read 模型中的 **rewriting module（重写模块）**；片段没有给出完整的新模块清单。\n\n依据：Search module 可针对特定场景，通过 LLM 生成的代码和查询语言，直接跨搜索引擎、数据库、知识图谱等数据源进行搜索 [1]。Modular RAG 通过集成新模块或调整现有模块间交互流来扩展灵活性 [4]；其中 Rewrite-Retrieve-Read 通过 rewriting module 和 LM-feedback 机制来改进检索查询 [4]。LM-feedback 在片段中被描述为机制，而非明确称为模块 [4]。",
+      "reference_answer": "引入了 Search、RAG-Fusion、Memory、Routing、Predict 和 Task Adapter 等模块。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        4
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "系统答案依据片段正确指出了Search及Rewrite-Retrieve-Read中的重写模块，并说明片段未给出完整清单，但缺少参考答案中的RAG-Fusion、Memory、Routing、Predict、Task Adapter等关键模块，因此部分正确但不完整。"
+      },
+      "latency_retrieval_ms": 195.72559092193842,
+      "latency_generation_ms": 5742.691949941218,
+      "prompt_tokens": 769,
+      "completion_tokens": 972
+    },
+    {
+      "id": "q14",
+      "type": "method",
+      "question": "RAG 综述中提到的查询转换（Query Transformation）方法有哪些代表？",
+      "answerable": true,
+      "answer": "查询转换方法的明确代表是 **Query Rewrite（查询重写）**，包括用 LLM 提示进行查询重写，以及使用专门的小型语言模型，如 **RRR（Rewrite-retrieve-read）** [1]。  \n另外，片段还提到**递归检索（Recursive retrieval）**会逐步细化用户查询并将问题拆解为子问题，但片段未将其明确归类为“查询转换” [3]。",
+      "reference_answer": "查询重写（Query Rewrite）、HyDE（生成假设文档）和 Step-back Prompting 等。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 9,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 11,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 11,
+          "section": "C. Adaptive Retrieval"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案正确提到 Query Rewrite 和 RRR，但遗漏了参考答案中的 HyDE 与 Step-back Prompting 等关键代表。"
+      },
+      "latency_retrieval_ms": 210.8196730259806,
+      "latency_generation_ms": 2986.0727300401777,
+      "prompt_tokens": 787,
+      "completion_tokens": 356
+    },
+    {
+      "id": "q15",
+      "type": "factoid",
+      "question": "RAG 评估通常关注哪七个方面？",
+      "answerable": true,
+      "answer": "RAG 评估通常关注的七个方面是：**上下文相关性、答案忠实性、答案相关性、噪声鲁棒性、负拒绝、信息整合、反事实鲁棒性** [1][3][4][5]。\n\n依据是：片段 [1] 指出 RAG 评估强调三个主要质量分数和四个关键能力；其中三个质量分数为 context relevance、answer faithfulness、answer relevance [1]；片段 [4][5] 指出四个必需能力为 noise robustness、negative rejection、information integration、counterfactual robustness [4][5]。表 III 也将这七项列为 RAG 评估方面的指标 [3]。",
+      "reference_answer": "上下文相关性、忠实性、答案相关性、噪声鲁棒性、负样本拒答、信息整合和反事实鲁棒性。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "section": "C. Evaluation Aspects"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "section": "TABLE III"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "section": "C. Evaluation Aspects"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "section": "C. Evaluation Aspects"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "section": "B. Evaluation Target"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确列出了七个评估方面，与参考答案一致，且引用片段有效支撑各项陈述。"
+      },
+      "latency_retrieval_ms": 120.99029100500047,
+      "latency_generation_ms": 2514.636036939919,
+      "prompt_tokens": 781,
+      "completion_tokens": 375
+    },
+    {
+      "id": "q16",
+      "type": "factoid",
+      "question": "RAG 综述列举了哪些评估框架或工具？",
+      "answerable": true,
+      "answer": "结论：片段中明确列举的评估基准/框架包括 **RGB、RECALL、CRUD**；评估工具包括 **RAGAS、ARES、TruLens**，并另提到 **RALLE** 是用于 RAG 应用自动评估的工具 [2][5][6]。\n\n依据：\n- RGB、RECALL 和 CRUD 被列为评估 RAG 模型关键能力的代表性基准 [2]。\n- RAGAS、ARES 和 TruLens 被列为使用 LLM 判定质量分数的先进自动化工具 [1][2]。\n- 评估框架汇总表中也列出了 RGB、RECALL、RAGAS、ARES、TruLens [6]。\n- RALLE 被描述为面向 RAG 应用自动评估、基于任务特定指标的工具 [5]。",
+      "reference_answer": "RGB、RECALL、RAGAS、ARES、TruLens、CRUD 和 RAGQuestEval 等。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "section": "D. Evaluation Benchmarks and Tools"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "section": "D. Evaluation Benchmarks and Tools"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 12,
+          "section": "B. Evaluation Target"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 15,
+          "section": "SUMMARY OF EVALUATION FRAMEWORKS"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案基本列出了片段中的主要评估框架和工具且有引用支撑，但遗漏参考答案中的 RAGQuestEval，因此仅部分完整。"
+      },
+      "latency_retrieval_ms": 126.0274020023644,
+      "latency_generation_ms": 3360.856284154579,
+      "prompt_tokens": 853,
+      "completion_tokens": 441
+    },
+    {
+      "id": "q17",
+      "type": "multi_hop",
+      "question": "RAG 中的“Lost in the middle”问题出现在哪个阶段？综述建议如何缓解？",
+      "answerable": true,
+      "answer": "结论：“Lost in the middle”是过长上下文导致 LLM 在最终生成时倾向只关注长文本开头和结尾、遗忘中间内容的问题；综述在 Context Curation 部分建议通过进一步处理检索内容来缓解，但片段未展开具体缓解措施。[1]\n\n依据：片段指出冗余信息会干扰 LLM 最终生成，过长上下文也会导致该问题；因此在 RAG 系统中通常需要进一步处理检索内容。[1]",
+      "reference_answer": "出现在生成阶段使用检索上下文时：过长上下文会让 LLM 忽略中间部分。缓解方法包括重排序（Reranking）以及上下文选择/压缩（Context Selection/Compression），以减少冗余和噪声。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 10,
+          "section": "A. Context Curation"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "II. OVERVIEW OF RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 11,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案正确解释了“Lost in the middle”问题及其一般性缓解方向，但未给出参考答案中的重排序、上下文选择/压缩等具体措施，故仅部分完整。"
+      },
+      "latency_retrieval_ms": 213.83979404345155,
+      "latency_generation_ms": 10963.102713925764,
+      "prompt_tokens": 814,
+      "completion_tokens": 1528
+    },
+    {
+      "id": "q18",
+      "type": "factoid",
+      "question": "AutoGen 的两个核心概念是什么？",
+      "answerable": true,
+      "answer": "AutoGen 的两个核心概念是“可对话智能体（conversable agents）”和“对话编程（conversation programming）”[1]。\n\n依据：\n- 文献明确指出，该节介绍 AutoGen 的两个关键概念：conversable agents 与 conversation programming [1]。\n- 其中，可对话智能体是具有特定角色、能与其他可对话智能体收发消息并据此维护内部上下文、可配置多种能力（如由 LLM、工具或人类输入赋能）的实体 [1]。\n- 对话编程则是一种编程范式，包含两个方面：计算（智能体在多智能体对话中计算响应的动作）与控制流（这些计算发生的顺序或条件）[2]。",
+      "reference_answer": "可对话智能体（Conversable Agents）和对话编程（Conversation Programming）。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确列出两个核心概念，且定义与控制流等细节均有有效片段引用支撑。"
+      },
+      "latency_retrieval_ms": 189.36016410589218,
+      "latency_generation_ms": 2000.4088538698852,
+      "prompt_tokens": 733,
+      "completion_tokens": 148
+    },
+    {
+      "id": "q19",
+      "type": "factoid",
+      "question": "AutoGen 内置的回复函数（reply functions）主要基于哪几类能力？",
+      "answerable": true,
+      "answer": "结论：AutoGen 内置的回复函数主要基于三类能力：LLM 推理、代码或函数执行、人类输入 [1]。\n\n依据：片段[1]明确说明，AutoGen 提供的内置回复函数基于“LLM inference, code or function execution, or human input” [1]。",
+      "reference_answer": "基于 LLM 推理、代码或函数执行、以及人类输入；开发者也可以注册自定义回复函数。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 30,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确列出内置回复函数基于 LLM 推理、代码或函数执行、人类输入三类能力，且引用片段[1]直接支撑。"
+      },
+      "latency_retrieval_ms": 200.23812795989215,
+      "latency_generation_ms": 1560.6476210523397,
+      "prompt_tokens": 797,
+      "completion_tokens": 162
+    },
+    {
+      "id": "q20",
+      "type": "method",
+      "question": "AutoGen 的 GroupChatManager 在动态群聊中重复执行哪三个步骤？",
+      "answerable": true,
+      "answer": "结论：AutoGen 的 `GroupChatManager` 在动态群聊中重复执行三个步骤：1）动态选择发言者；2）让所选发言者响应并收集其回复；3）将所选发言者的消息广播给其他所有代理 [1][2]。\n\n依据：`GroupChatManager` 充当代理间对话的“指挥”，重复执行“动态选择发言者、收集所选发言者的响应、广播消息”这三个步骤 [1]；另一处也描述为“选择单个发言者、要求该发言者响应、向所有其他代理广播所选发言者的消息” [2]。",
+      "reference_answer": "动态选择发言者、收集被选中智能体的回复、广播消息。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 9,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 28,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 28,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 9,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 20,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确复述了GroupChatManager重复的三个步骤，且引用片段[1][2]均能直接支撑。"
+      },
+      "latency_retrieval_ms": 187.64739390462637,
+      "latency_generation_ms": 2022.1760880667716,
+      "prompt_tokens": 676,
+      "completion_tokens": 209
+    },
+    {
+      "id": "q21",
+      "type": "factoid",
+      "question": "在 MATH 全测试集上，AutoGen 与 GPT-4 的准确率分别是多少？",
+      "answerable": true,
+      "answer": "结论：在 MATH 全测试集上，AutoGen 的总体准确率为 **69.48%**，GPT-4 的准确率为 **55.18%**。[1][2]\n\n依据：片段指出“整个数据集”上 AutoGen 达到 overall accuracy 69.48%，而 GPT-4 的 accuracy 为 55.18%。[1][2]",
+      "reference_answer": "AutoGen 为 69.48%，GPT-4 为 55.18%。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 20,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 20,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 7,
+          "section": "120 Level-5 problems"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 7,
+          "section": "120 Level-5 problems"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 19,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 28,
+          "section": "GPT-4"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案与参考答案完全一致，准确给出 AutoGen 69.48% 和 GPT-4 55.18%，且引用片段[1][2]直接支撑。"
+      },
+      "latency_retrieval_ms": 207.83779001794755,
+      "latency_generation_ms": 3578.6976679228246,
+      "prompt_tokens": 870,
+      "completion_tokens": 475
+    },
+    {
+      "id": "q22",
+      "type": "method",
+      "question": "AutoGen 的 ALFWorld 应用由哪两个智能体组成，各自负责什么？",
+      "answerable": true,
+      "answer": "AutoGen 的 ALFWorld 应用由两个智能体组成：**assistant agent（助手智能体）**和 **executor agent（执行器智能体）** [2][3]。\n\n- **assistant agent**：负责生成计划并做出行动决策，即建议下一步行动 [2][3]。\n- **executor agent**：专门针对 ALFWorld，负责执行 assistant 提出的动作，并将家庭环境中的动作执行结果作为反馈报告给 assistant [2]。",
+      "reference_answer": "由 LLM 驱动的 Assistant Agent（负责规划/建议下一步行动）和 Executor Agent（负责在 ALFWorld 环境中执行动作）组成，并结合 ReAct prompting。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 8,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 24,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 24,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 24,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 8,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 4,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        2,
+        3
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确说明 assistant agent 负责规划与行动决策、executor agent 负责在 ALFWorld 执行动作并反馈结果，引用有效且与片段一致。"
+      },
+      "latency_retrieval_ms": 154.54423008486629,
+      "latency_generation_ms": 2112.327486043796,
+      "prompt_tokens": 831,
+      "completion_tokens": 182
+    },
+    {
+      "id": "q23",
+      "type": "multi_hop",
+      "question": "AutoGen 的检索增强聊天（Retrieval-augmented Chat）如何组织多轮对话？",
+      "answerable": true,
+      "answer": "结论：AutoGen 的 Retrieval-augmented Chat 通过两个代理——Retrieval-augmented User Proxy 和 Retrieval-augmented Assistant——进行多轮对话来组织流程：前者负责文档处理与检索上下文，后者基于上下文和反馈生成代码或文本；当需要更多上下文时，助手代理会请求“Update Context”，双方可重复多轮，直到得到满意答案或没有更多文档可用 [1][3][4][5]。\n\n依据如下：该系统由两个代理组成，二者都扩展自 AutoGen 的内置代理 [4]；使用时需要初始化 Retrieval-augmented User Proxy 和 Retrieval-augmented Assistant 两个代理 [1]。Retrieval-augmented User Proxy 会先自动处理文档，将其切分、分块并存入向量数据库；对于给定用户输入，它检索相关块作为上下文并发送给 Retrieval-augmented Assistant [3]。Retrieval-augmented Assistant 使用 LLM 生成代码或文本来回答问题，代理之间持续对话直到找到满意答案 [3]。在多轮机制上，如果 Retrieval-augmented Assistant 收到“Update Context”，它会向 Retrieval-augmented User Proxy 请求下一批最相似的文档块作为新上下文；否则它会基于反馈和聊天历史生成新的代码或文本；如果 LLM 未能生成答案，它会再次回复“Update Context”，该过程可重复多次；当没有更多文档可用于上下文时，对话终止 [5]。",
+      "reference_answer": "Retrieval-augmented User Proxy 先对文档切分、存入向量库，并针对用户输入检索相关片段；随后把上下文发给 Retrieval-augmented Assistant 生成答案或代码，双方持续对话直到得到满意答案。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 22,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 22,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 22,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 5,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确完整地说明了两个代理的分工、检索上下文、Update Context 多轮机制及终止条件，且所有事实性陈述均有有效片段引用支撑。"
+      },
+      "latency_retrieval_ms": 216.12369292415679,
+      "latency_generation_ms": 4185.708455042914,
+      "prompt_tokens": 793,
+      "completion_tokens": 564
+    },
+    {
+      "id": "q24",
+      "type": "cross_paper",
+      "question": "MAIC 的多智能体课堂与 AutoGen 的多智能体框架在角色设计上有什么不同？",
+      "answerable": true,
+      "answer": "结论：MAIC 的角色设计更偏向**教学场景专用的角色分工**，包括 AI 教师、AI 助教、可定制同学以及隐藏的管理型 meta-agent；AutoGen 则提供**通用的可定制、可对话 agent 抽象**，专用角色通过复用或扩展内置 agent 来创建，而不是限定于课堂角色体系。[1][4][5][6]\n\n依据如下：\n\n- MAIC 中，课程由 AI 教师 agent 自主完成，并依据多模态学生交互轨迹和潜在知识状态估计实时调整教学策略；同时部署角色专门的 AI 同伴，包括助教和可定制同学，以支持协作、情感支持和元认知提示。[1]\n- MAIC 的课堂采用“1 个学生用户 + N 个 AI Agents”模式：AI 教师依据高度结构化的教学动作表示语言控制学习进度、讲解内容、提问和翻页，AI 助教维持课堂秩序并防止内容偏离。[5]\n- MAIC 还包含一个隐藏的 meta-agent，负责调节课堂互动动态。[6]\n- AutoGen 是通用多智能体对话框架，其核心理念之一是“可定制且可对话的 agent”；这些 agent 可利用 LLM、人类输入、工具或其组合。[2]\n- AutoGen 允许通过复用或扩展内置 agent 来轻松创建具有专门能力和角色的 agent；其中 `ConversableAgent` 是最高层级的 agent 抽象，默认可使用 LLM、人类和工具。[4]\n\n因此，二者的主要差异是：MAIC 的角色体系围绕课堂教学职能和互动管理来设计，具有明确的教师、助教、同学和管理者等教学角色分工；AutoGen 提供的是通用 agent 抽象和角色定制机制，强调通过复用/扩展内置 agent 来构造专用角色。[1][4][5][6]",
+      "reference_answer": "MAIC 面向教育场景预设了领域特定角色（AI 教师、助教和四类同学智能体），角色与课堂职责和教学行为绑定；AutoGen 提供通用的可对话智能体和对话模式（如 GroupChat），角色由开发者通过提示词、回复函数和对话编排自定义，强调通用基础设施。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 3,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 9,
+          "section": "3.3.1    Environment Principles"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "3.3.3    Classroom Management"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": false,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案准确概括了MAIC教育场景专用角色与AutoGen通用可定制agent抽象的核心差异，且所有事实性陈述均有检索片段支撑。"
+      },
+      "latency_retrieval_ms": 119.80892904102802,
+      "latency_generation_ms": 5941.686539910734,
+      "prompt_tokens": 742,
+      "completion_tokens": 799
+    },
+    {
+      "id": "q25",
+      "type": "cross_paper",
+      "question": "MAIC-Craft 的 Open-Ended RAG 与 RAG 综述中的 Advanced/Modular RAG 有哪些对应关系？",
+      "answerable": true,
+      "answer": "信息不足：所提供的论文片段未包含 MAIC-Craft 或 Open-Ended RAG 的任何定义、架构或流程描述，也未说明其与 Advanced/Modular RAG 的对应关系，因此无法依据片段建立对应关系。",
+      "reference_answer": "MAIC-Craft 在课程准备中做知识库构建、查询生成/改写和开放式检索，对应 Advanced RAG 的检索前查询优化与检索后处理，也对应 Modular RAG 的可组合模块（如 Search、Routing、Task Adapter）和灵活编排；RAG 在这里是多智能体内容生成流程中的一个模块。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 4,
+          "section": "C. Modular RAG"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 0,
+        "faithfulness": 2,
+        "citation_support": 0,
+        "refusal": "false_refusal",
+        "reason": "问题可回答且参考答案给出了对应关系，系统答案却以信息不足拒绝，属于错误拒答。"
+      },
+      "latency_retrieval_ms": 213.7252080719918,
+      "latency_generation_ms": 2147.1252299379557,
+      "prompt_tokens": 813,
+      "completion_tokens": 297
+    },
+    {
+      "id": "q26",
+      "type": "cross_paper",
+      "question": "三篇论文分别如何评估各自系统？",
+      "answerable": true,
+      "answer": "结论：AutoGen 的评估方式是每个问题测试三次，并报告问题解决正确率与失败原因 [3]；OpenMAIC 从学习表现、技术接受度、自我报告高阶思维三方面评估 [4]，并采用内容理解、长上下文连贯性、教学设计三项自动化指标评估生成脚本 [6]；RAG 综述主要回顾 RAG 的评估框架、基准、下游任务与评估方法 [1][2][5]，片段未提供其自身系统的具体评估实验 [1][5]。\n\n依据：\n- AutoGen：每个基于 LLM 的系统在每个问题上测试三次，表格报告问题解决正确率并总结失败原因，例如 AutoGen 为 3/3，AutoGPT 为 0/3 [3]。\n- OpenMAIC：评估从学习表现、通过问卷测量的技术接受度、自我报告高阶思维分数三个视角进行 [4]；其中基线测试在课程前一天进行，由 10 道选择题组成，模块测试在每个模块结束时进行，每模块测试由 10 道选择题组成 [4]；自动化评估指标包括内容理解、长上下文连贯性和教学设计 [6]。\n- RAG 综述：论文介绍最新的评估框架和基准 [1]，并全面回顾适用于 RAG 的下游任务、数据集、基准和评估方法 [5]；其 Section VI 聚焦 RAG 的下游任务和评估体系 [2]。\n\n信息不足：缺少 rag_survey 自身系统的具体评估实验、指标与结果信息。",
+      "reference_answer": "MAIC 结合自动指标（如连贯性、教学法）与人工评估，并通过 TGAI 课程两个月的真实教学实验评估学生投入和学习效果；RAG 综述总结了上下文相关性、忠实性、答案相关性、噪声鲁棒性等评估维度及 RGB、RAGAS、ARES 等框架；AutoGen 在 MATH、ALFWorld 等基准上报告准确率，并用多个应用案例做定性与定量评估。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 19,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 15,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.2    Evaluation Metrics"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 1,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "答案引证有效且基本忠实，但遗漏了AutoGen基准/应用案例、RAG具体评估维度与框架、MAIC人工评估和两个月真实教学实验等关键事实。"
+      },
+      "latency_retrieval_ms": 206.1682678759098,
+      "latency_generation_ms": 10258.292743004858,
+      "prompt_tokens": 861,
+      "completion_tokens": 1630
+    },
+    {
+      "id": "q27",
+      "type": "unanswerable",
+      "question": "MAIC 论文中报告的模型训练使用了多少张 GPU？",
+      "answerable": false,
+      "answer": "信息不足：提供的片段中没有提及模型训练所使用的 GPU 数量或任何硬件配置信息；[1][2] 仅描述评估任务与基线（20 个大学演示文稿），[5] 仅说明通过微调或上下文工程使用若干基础模型，均未涉及 GPU 数量。",
+      "reference_answer": "论文未提及模型训练所用的 GPU 数量，信息不足。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.1    Experimental Setup"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 11,
+          "section": "4.1.1    Experimental Setup"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 14,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 9,
+          "section": "3.3.1    Environment Principles"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 10,
+          "section": "3.3.3    Classroom Management"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 6,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        5
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "系统答案正确指出片段未提供GPU数量，并准确引用相关片段说明缺失硬件信息。"
+      },
+      "latency_retrieval_ms": 203.52402003481984,
+      "latency_generation_ms": 1239.045443944633,
+      "prompt_tokens": 617,
+      "completion_tokens": 87
+    },
+    {
+      "id": "q28",
+      "type": "unanswerable",
+      "question": "AutoGen 的 MATH 实验使用的是哪一个具体版本的 GPT-4？",
+      "answerable": false,
+      "answer": "信息不足：现有片段只说明 MATH 实验“使用 GPT-4 作为基础模型”[2]，并给出 AutoGen 与 GPT-4 的准确率对比[4][5]，但没有标明所用 GPT-4 的具体版本号（如 0613、0314 等）。片段 [6] 仅含“GPT-4 6.8, 3 4.5, 0 4, 0 28”这类无法辨识版本含义的内容，不能据此确定具体版本。",
+      "reference_answer": "论文只说明使用 GPT-4，没有给出具体版本号，信息不足。",
+      "sources": [
+        {
+          "file": "autogen.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 19,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 6,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 20,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 20,
+          "section": "Body"
+        },
+        {
+          "file": "autogen.pdf",
+          "page": 28,
+          "section": "GPT-4"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        2,
+        4,
+        5,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "问题不可回答，答案明确说明片段仅提到使用 GPT-4 而未给出具体版本号，并正确引用相关片段。"
+      },
+      "latency_retrieval_ms": 196.1656277999282,
+      "latency_generation_ms": 2192.083284026012,
+      "prompt_tokens": 747,
+      "completion_tokens": 253
+    },
+    {
+      "id": "q29",
+      "type": "unanswerable",
+      "question": "RAG 综述中提到的 RAGAS 框架的作者是谁？",
+      "answerable": false,
+      "answer": "信息不足：提供的片段仅提到 RAGAS 是用于评估 RAG 质量的自动化工具之一 [1]，但没有给出其作者信息。",
+      "reference_answer": "综述未给出 RAGAS 的作者信息，信息不足。",
+      "sources": [
+        {
+          "file": "rag_survey.pdf",
+          "page": 14,
+          "section": "D. Evaluation Benchmarks and Tools"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "Body"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 1,
+          "section": "I. INTRODUCTION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 16,
+          "section": "VIII. CONCLUSION"
+        },
+        {
+          "file": "rag_survey.pdf",
+          "page": 2,
+          "section": "Body"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "系统正确指出片段仅将 RAGAS 列为评估工具而未提供作者信息，明确说明信息不足并引用[1]支撑。"
+      },
+      "latency_retrieval_ms": 207.6472460757941,
+      "latency_generation_ms": 953.7540210876614,
+      "prompt_tokens": 781,
+      "completion_tokens": 48
+    },
+    {
+      "id": "q30",
+      "type": "unanswerable",
+      "question": "MAIC 是否已经在欧美高校部署？",
+      "answerable": false,
+      "answer": "信息不足：提供的片段仅提及 MAIC 在清华大学（中国）开展探索性实验与大规模用户研究 [1][2][6]，未包含任何关于欧美高校部署情况的信息，因此无法判断 MAIC 是否已在欧美高校部署。",
+      "reference_answer": "论文只报告了在清华大学课程中的部署与实验，没有说明欧美高校的部署情况，信息不足。",
+      "sources": [
+        {
+          "file": "openmaic.pdf",
+          "page": 2,
+          "section": "4 Department of Statistics and Data Science, Tsinghua University, Beijing 100084"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 4,
+          "section": "Body"
+        },
+        {
+          "file": "openmaic.pdf",
+          "page": 13,
+          "section": "5    Empirical Evaluation"
+        }
+      ],
+      "context_count": 6,
+      "valid_citations": [
+        1,
+        2,
+        6
+      ],
+      "invalid_citations": [],
+      "refusal_detected": true,
+      "judge": {
+        "correctness": 2,
+        "faithfulness": 2,
+        "citation_support": 2,
+        "refusal": "correct",
+        "reason": "系统答案正确指出片段仅涉及清华大学（中国）的实验与研究，未提及欧美高校部署，明确说明信息不足，且引用[1][2][6]均有效支撑该结论。"
+      },
+      "latency_retrieval_ms": 198.15951096825302,
+      "latency_generation_ms": 1990.8101921901107,
+      "prompt_tokens": 807,
+      "completion_tokens": 195
+    }
+  ]
+}
